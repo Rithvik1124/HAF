@@ -94,7 +94,7 @@ img { max-width: 100%; height: auto; display: flex; }
 /* --- DARK STATIC NAVBAR --- */
 .main-nav {
     width: 100%;
-    padding: 40px 0;
+    padding: 30px 0;
     background-color: #fff;
     position: fixed;
   top: 0;
@@ -334,15 +334,7 @@ img { max-width: 100%; height: auto; display: flex; }
     overflow: hidden;
 }
 
-.philosophy-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 80px;
-}
+
 
 .philosophy-content {
     max-width: 550px;
@@ -525,7 +517,8 @@ img { max-width: 100%; height: auto; display: flex; }
 .review-card {
     flex: 0 0 400px;
     scroll-snap-align: center;
-    min-height: 480px;
+    min-height: auto;
+    height: auto;
     background: #202020; /* White cards look best on #e2ddb4 */
     color:#fff;
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -988,6 +981,7 @@ img { max-width: 100%; height: auto; display: flex; }
     font-weight: bold;
     cursor: pointer;
     transition: var(--transition);
+    pad
 }
 
 .btn-primary:hover {
@@ -1384,5 +1378,10 @@ img { max-width: 100%; height: auto; display: flex; }
   section {
     width: 100%;
     overflow-x: hidden;
+  }
+}
+@media (min-width: 1400px) {
+  html {
+    font-size: 16px;
   }
 }

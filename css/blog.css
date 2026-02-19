@@ -8,6 +8,11 @@
     --transition: all 0.3s ease;
 }
 
+.small-gap{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
 .blog-container {
     max-width: 850px;
     margin: 0 auto; /* Removed the top margin to handle it with padding */
@@ -82,6 +87,12 @@
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--brand-cream);
+}
+
+.sub-head-1 {
+    color: var(--brand-orange);
+    text-transform: uppercase;
+    margin-top: 2em;
 }
 
 .blog-content h2 {

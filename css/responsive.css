@@ -1,0 +1,105 @@
+html {
+  font-size: clamp(14px, 0.9vw + 10px, 18px);
+}
+.container,
+.philosophy-container,
+.story,
+.values,
+.team-grid,
+.svc-list {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 32px);
+  padding-right: clamp(16px, 4vw, 32px);
+}
+/* ============================= */
+/* LARGE LAPTOPS */
+/* ============================= */
+
+@media (max-width: 1400px) {
+  .philosophy-container,
+  .story-grid {
+    gap: 60px;
+  }
+}
+
+/* ============================= */
+/* TABLETS */
+/* ============================= */
+
+@media (max-width: 1024px) {
+
+  .philosophy-container,
+  .story-grid {
+    flex-direction: column;
+    grid-template-columns: 1fr !important;
+  }
+
+  .flip-card,
+  .static-image-card {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+  }
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .main-nav {
+    padding: 14px 20px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 120px 20px 80px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-card {
+    padding: 24px;
+  }
+
+  .flip-face {
+    padding: 28px;
+  }
+}
+
+/* ============================= */
+/* SMALL PHONES */
+/* ============================= */
+
+@media (max-width: 480px) {
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .member img {
+    height: 220px;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

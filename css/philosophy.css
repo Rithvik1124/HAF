@@ -1,10 +1,53 @@
 /* ======================================================
-   PHILOSOPHY SECTION — FIXED
+   PHILOSOPHY SECTION — PREMIUM VERSION
 ====================================================== */
 
 .philosophy-section {
-  padding: clamp(60px, 6vw, 80px) 0;
-  background: #6C6F7F;
+  position: relative;
+  padding: clamp(0px, 8vw, 20px) 0;
+
+  background: radial-gradient(circle at 30% 20%,
+      #cccccc 0%,
+      #e1dddd 60%);
+  overflow: hidden;
+}
+
+
+
+
+/* subtle texture overlay */
+.philosophy-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.philosophy-header {
+  text-align: center;
+  margin-bottom: 80px;
+
+}
+
+.philosophy-header .section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  letter-spacing: -1px;
+
+}
+
+.text-highlight {
+  color: #e43636;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 /* ======================================================
@@ -12,108 +55,81 @@
 ====================================================== */
 
 .philosophy-container {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 
   display: flex;
   gap: 80px;
-  align-items: stretch;
-
-  perspective: 1600px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ======================================================
-   LEFT FLIP CARD
+   LEFT CARD
 ====================================================== */
 
 .flip-card {
   flex: 1;
-  max-width: 560px;
-  height: 520px;
+  max-width: 580px;
+  height: 480px;
+  perspective: 1500px;
 }
 
-/* IMPORTANT */
 .flip-inner {
-  position: relative;
   width: 100%;
   height: 100%;
-  
-  /* NEW: Grid stacking magic */
-  display: grid;
-  grid-template-areas: "stack";
-  
+  position: relative;
+  transition: transform 1s cubic-bezier(.22, 1, .36, 1);
   transform-style: preserve-3d;
-  transition: transform 0.9s cubic-bezier(.22,.61,.36,1);
 }
 
 .flip-card.flipped .flip-inner {
   transform: rotateY(180deg);
 }
 
-/* ======================================================
-   CARD FACES
-====================================================== */
-
 .flip-face {
-  /* Remove position: absolute */
-  /* position: absolute;  <-- DELETE THIS */
-  
-  position: relative; /* Keep them in flow */
-  grid-area: stack;   /* Stack them on top of each other */
-  
-  /* Keep your existing styles */
-  inset: 0; /* Can remove this, but harmless */
+  position: absolute;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
   padding: 60px;
-  border-radius: 22px;
-  backface-visibility: hidden;
-  
-  /* Ensure content centers */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  backface-visibility: hidden;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, .35),
+    0 0 0 1px rgba(255, 255, 255, .05);
 }
+
+/* subtle hover lift */
+.flip-card:hover {
+  transform: translateY(-6px);
+  transition: .4s ease;
+}
+
 .flip-face.back {
-  background-color: #f8f8f8;
   transform: rotateY(180deg);
 }
 
-/* ======================================================
-   CONTENT
-====================================================== */
-
-.philosophy-card {
-  background: #f8f8f8;
+/* TEXT */
+.flip-face h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
-/* --- PHILOSOPHY EYEBROW TAG --- */
-.philosophy-header {
-    max-width: 640px;
-    margin-bottom: 50px;
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 60px;
-}
-
-.philosophy-section .philosophy-header .section-title {
-  color: #fff;
-    margin-top: 12px;
-}
-
-.section-title .text-highlight{
-  color: #fff;
-}
-
-
-.philosophy-card h2 {
-  font-size: 2.4rem;
-  margin-bottom: 25px;
-}
-
-.philosophy-card p {
-  font-size: 1.05rem;
+.flip-face p {
+  font-size: 1rem;
   line-height: 1.7;
-  color: #444;
+  color: #333;
+  opacity: .9;
   margin-bottom: 16px;
 }
 
@@ -123,19 +139,34 @@
 
 .static-image-card {
   flex: 1;
-  max-width: 560px;
-  height: 540px;
-  align-items: stretch;
+  max-width: 580px;
+  height: 480px;
+  position: relative;
 }
 
 .static-image-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 22px;
+  border-radius: 28px;
 
-  /* match card optical weight */
-  display: block;
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, .4);
+
+  transition: transform .6s ease;
+}
+
+.static-image-card:hover img {
+  transform: scale(1.03);
+}
+
+/* decorative frame */
+.static-image-card::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, .08);
 }
 
 /* ======================================================
@@ -143,24 +174,34 @@
 ====================================================== */
 
 .flip-cta {
+  margin-top: 60px;
   display: flex;
   justify-content: center;
-  margin-top: 60px;
 }
 
-.flip-card,
-.static-image-card {
-  flex: 1;
-  max-width: 560px;
-  display: flex;        /* ← force equal box behavior */
+#flipBtn {
+  padding: 18px 46px;
+  margin-bottom: 40px;
+  font-weight: 800;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #e43636, #a91f1f);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: .4s ease;
+  box-shadow: 0 18px 50px rgba(228, 54, 54, .4);
+}
+
+#flipBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(228, 54, 54, .5);
 }
 
 /* ======================================================
    RESPONSIVE
 ====================================================== */
 
-@media (max-width: 1100px) {
-
+@media (max-width: 1024px) {
   .philosophy-container {
     flex-direction: column;
     gap: 60px;
@@ -169,41 +210,16 @@
   .flip-card,
   .static-image-card {
     max-width: 100%;
-    height: 480px;
+    height: 420px;
   }
-
 }
 
 @media (max-width: 768px) {
-
-  .flip-card,
-  .static-image-card {
-    height: auto;
-    min-height: 420px;
-  }
-
   .flip-face {
     padding: 36px;
   }
 
-  .philosophy-card h2 {
-    font-size: 1.7rem;
+  .flip-face h2 {
+    font-size: 1.6rem;
   }
-
-  .philosophy-card p {
-    font-size: 0.95rem;
-  }
-
-}
-
-@media (max-width: 480px) {
-
-  .flip-face {
-    padding: 28px;
-  }
-
-  .philosophy-card h2 {
-    font-size: 1.5rem;
-  }
-
 }

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About Us — Hustle & Flow</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="about.css">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+<div class="progress-container">
+    <div class="progress-bar" id="scrollBar"></div>
+</div>
+
+<nav class="main-nav">
+  <div class="nav-container">
+
+    <a class="nav-logo" href="/">
+      <img src="../logos/hustleandflow.png" alt="Viralmint">
+    </a>
+
+    <button class="menu-burger" id="burger">
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+    </button>
+
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../">Home</a>
+  <a href="../about/">About Us</a>
+  <a href="../services/">Services</a>
+  <a href="../blogs/"> Blogs</a>
+  <a href="../#contact-us">Contact Us</a>
+  
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="grainient-bg" id="grainient"></div>
+
+  <div class="hero-content">
+    <h1 class="hustle-title">Built by Humans,<br>Powered by Hustle</h1>
+    <p>We’re not another agency.  
+      We’re operators, storytellers, analysts and builders  
+      obsessed with one thing — real growth.</p>
+    <button class="btn" onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">Meet The Team</button>
+
+  </div>
+</section>
+<script src="https://unpkg.com/ogl@0.0.32/dist/ogl.umd.js"></script>
+<script src="grainient.js"></script>
+<!-- OGL CDN -->
+
+
+    <!--<h1 class="hustle-title">/h1>
+
+    <p>
+      
+    </p>
+
+  </div>
+</section>-->
+
+
+<!-- STORY -->
+
+<section class="story">
+
+<h2 class="section-title">Our Story</h2>
+
+<div class="story-grid">
+
+<div class="story-card reveal">
+<h3>From Chaos to Clarity</h3>
+<p>
+Hustle & Flow began when we realized most brands were drowning in tools but starving for strategy.  
+We built a team that understands ads, code, design and psychology, not in silos, but as one system.
+</p>
+</div>
+
+<div class="story-card reveal">
+<h3>Ownership Mentality</h3>
+<p>
+Your revenue is personal to us.  
+We work like internal partners, questioning assumptions, killing vanity metrics, and protecting your margins like our own.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- TEAM -->
+
+<section class="team" id="team">
+
+<h2 class="section-title" style="text-align:center">Meet The Hustlers</h2>
+
+<div class="team-grid">
+
+<div class="member">
+<img src="https://picsum.photos/600/700?1">
+<div class="member-body">
+<h4>Kashyap Sawanjha</h4>
+<span>Growth Lead</span>
+<p>10M+ ad spend managed, obsessed with unit economics and creative testing.</p>
+</div>
+</div>
+
+<div class="member">
+<img src="https://picsum.photos/600/700?2">
+<div class="member-body">
+<h4>Riya Malhotra</h4>
+<span>Creative Director</span>
+<p>Turns brand stories into scroll-stopping systems that convert.</p>
+</div>
+</div>
+
+<div class="member">
+<img src="https://picsum.photos/600/700?3">
+<div class="member-body">
+<h4>Arjun Mehta</h4>
+<span>Analytics & Tech</span>
+<p>Tracking nerd. If it can’t be measured, it didn’t happen.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- VALUES -->
+
+<section class="values">
+
+<h2 class="section-title">What We Stand For</h2>
+
+<div class="value-row reveal">
+<div class="value-num">01</div>
+<div class="value-text">
+<h4>Truth over Trends</h4>
+<p>No buzzwords. Only what moves revenue.</p>
+</div>
+</div>
+
+<div class="value-row reveal">
+<div class="value-num">02</div>
+<div class="value-text">
+<h4>Craft over Comfort</h4>
+<p>We’d rather be uncomfortable than average.</p>
+</div>
+</div>
+
+<div class="value-row reveal">
+<div class="value-num">03</div>
+<div class="value-text">
+<h4>Long Games Win</h4>
+<p>Brands are built in years, not campaigns.</p>
+</div>
+</div>
+
+</section>
+
+
+<!-- SIMPLE ANIMATIONS -->
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+function onScroll(){
+  const trigger = window.innerHeight * .88;
+
+  reveals.forEach(el=>{
+    const top = el.getBoundingClientRect().top;
+    if(top < trigger) el.classList.add("visible");
+  });
+}
+
+window.addEventListener("scroll", onScroll);
+onScroll();
+</script>
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col about-col">
+            <img src="../logos/hustleandflow-logo.png" alt="Hustle and Flow" class="footer-logo">
+            <p class="footer-description">
+                Not just another agency, we're a growth partner obsessed with ROI, creativity, and long-term brand value.
+            </p>
+            
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="../about/">About Us</a></li>
+                <li><a href="../blogs/">Blogs</a></li>
+                <li><a href="../#contact-us">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-title">Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="../services/">SEO</a></li>
+              <li><a href="../services/">Amazon</a></li>
+              <li><a href="../services/">Google Ads</a></li>
+              <li><a href="../services/">Facebook Ads</a></li>
+              <li><a href="../services/">Web Design</a></li>
+
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-title">Let's Talk!</h4>
+            <p class="footer-address">Some Long Address, In India - Zip Code.</p>
+            <div class="social-icons">
+                <a href="#"><i data-lucide="mail"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
+                <a href="#"><i data-lucide="twitter"></i></a>
+                <a href="#"><i data-lucide="linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Copyright © 2025 Hustle And Flow. All Rights Reserved.</p>
+    </div>
+</footer>	
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+
+    <script>
+        lucide.createIcons();
+    </script>
+<script src="../blogs/blogs-nav.js"></script>
+<script src="../main.js"></script>
+
+
+</body>
+</html>

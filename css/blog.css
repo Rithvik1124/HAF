@@ -8,6 +8,10 @@
     --transition: all 0.3s ease;
 }
 
+p{
+    color: #000;
+}
+
 .small-gap{
     display: inline-block;
     margin-bottom: 10px;
@@ -75,6 +79,7 @@
     margin: 40px 0;
     border: 1px solid var(--brand-orange);
     padding: 10px; /* Creates a "framed" effect */
+    
 }
 
 .featured-image img {
@@ -84,6 +89,7 @@
 
 /* Text Content */
 .blog-content {
+    font-weight: 400;
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--brand-cream);
@@ -219,7 +225,7 @@
 }
 
 .footer-title {
-    color: var(--brand-cream);
+    color: #d2d2d2;
     font-size: 1.2rem;
     font-weight: 800;
     margin-bottom: 25px;
